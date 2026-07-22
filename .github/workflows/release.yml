@@ -69,7 +69,7 @@ jobs:
             -archivePath "$RUNNER_TEMP/$APP_NAME.xcarchive" -destination 'generic/platform=iOS' \
             CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM="$TEAM_ID" \
             PROVISIONING_PROFILE_SPECIFIER="$PROFILE_NAME" CODE_SIGN_IDENTITY="$SIGN_IDENTITY_SHA1" \
-            CURRENT_PROJECT_VERSION="$GITHUB_RUN_NUMBER"
+            CURRENT_PROJECT_VERSION="$((GITHUB_RUN_NUMBER + 100))"
 
       - name: Export IPA
         env:
